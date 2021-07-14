@@ -1,7 +1,10 @@
+import MyPosts from './MyPosts/MyPosts';
+import './Profile.scss';
+
 function Profile() {
   return (
     <div className="content">
-      <p>Main Content</p>
+      <MyPosts />
     </div>
   );
 }
