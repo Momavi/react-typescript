@@ -1,11 +1,10 @@
 import MyPosts from './MyPosts/MyPosts';
 import './Profile.scss';
 
-function Profile() {
+function Profile(props: any) {
+
   return (
-    <div className="content">
-      <MyPosts />
-    </div>
+    <MyPosts posts={props.state.posts}/>
   );
 }
 

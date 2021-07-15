@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import './Navbar.scss';
 
 function Navbar() {
@@ -5,16 +7,16 @@ function Navbar() {
     <nav className="nav">
       <ul className="nav__item">
         <li className="nav__item-li">
-          <a className="nav__item-li-link" href="#!">Profile</a>
+          <NavLink className="nav__item-li-link" to="/profile">Profile</NavLink>
         </li>
         <li className="nav__item-li">
-          <a className="nav__item-li-link" href="#!">Messages</a>
+          <NavLink className="nav__item-li-link" to="/dialogs">Messages</NavLink>
         </li>
         <li className="nav__item-li">
-          <a className="nav__item-li-link" href="#!">News</a>
+          <NavLink className="nav__item-li-link" to="/news">News</NavLink>
         </li>
         <li className="nav__item-li">
-          <a className="nav__item-li-link" href="#!">Settings</a>
+          <NavLink className="nav__item-li-link" to="/settings">Settings</NavLink>
         </li>
       </ul>
     </nav>

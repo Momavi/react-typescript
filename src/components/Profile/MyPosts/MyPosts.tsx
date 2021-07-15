@@ -1,21 +1,27 @@
+import React from 'react';
 import './MyPosts.scss';
 import Post from './Post/Post';
 
-function MyPosts() {
+function MyPosts(props: any) {
+
+  let postsElements = props.posts.map((p: any) => <Post message={p.message} likesCounter={p.likesCounter} />);
+  let newPostElement: any = React.createRef();
+  let addPost = () => {
+    let text = newPostElement.current.value;
+  }
   return (
     <div>
       My posts
       <div>
-        <textarea></textarea>
-        <button>Add post</button>
+        <div>
+          <textarea ref={newPostElement}></textarea>
+        </div>
+        <button onClick={() => { addPost }}>Add post</button>
       </div>
       <div className="posts">
-        <Post message="hi, how are you" likesCounter={4} />
-        <Post message="It's my first post" likesCounter={7}/>
-        <Post message="Mda kak ze mnogo koda i papok" likesCounter={104}/>
+        {postsElements}
       </div>
     </div>
-
   );
 }
 
