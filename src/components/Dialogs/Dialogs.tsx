@@ -1,38 +1,47 @@
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import React from 'react';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
 import './Dialogs.scss';
 
-function DialogItem(props: { name: string, id: number }) {
-  return (
-    <div className="dialog__item active">
-      <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
-    </div>
-  )
-}
-
-function Message(props: { text: string }) {
-  return <div className="dialogs__message">{props.text}</div>
-}
-
 function Dialogs(props: any) {
+  let state = props.dialogsPage;
 
-  let dialogsElements = props.state.dialogs.map((d: any) => <DialogItem name={d.name} id={d.id} />);
+  let dialogsElements = state.dialogs.map((d: { name: string, id: number }) => <DialogItem name={d.name} key={d.id} id={d.id} />);
+  let messagesElements = state.messages.map((m: { message: string, id : number }) => <Message text={m.message} key={m.id} />);
+  let newMessageElement: any = React.createRef();
 
-  let messagesElements = props.state.messages.map((m: any) => <Message text={m.message} />)
+  let onSendMessageClick = () => {
+    props.sendMessage();
+  }
+  let onNewMessageChange = (e: any) => {
+    props.updateNewMessageBody(e.target.value);
+  }
 
   return (
     <div className="dialogs">
-      <div className="dialogs__title">Dialogs</div>
+      <h3 className="dialogs__title">Dialogs</h3>
       <div className="dialogs__wrapper">
         <div className="dialogs__items">
           {dialogsElements}
         </div>
         <div className="dialogs__messages">
-          {messagesElements}
+          <div>{messagesElements}</div>
+          <div>
+            <div>
+              <textarea
+                onChange={onNewMessageChange}
+                ref={newMessageElement}
+                value={props.dialogsPage.newMessageBody}
+                placeholder="Enter you message" />
+            </div>
+            <div>
+              <button onClick={() => { onSendMessageClick() }}>Send</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   );
 }
 

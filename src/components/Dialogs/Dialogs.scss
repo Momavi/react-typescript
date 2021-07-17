@@ -3,4 +3,7 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
   }
+  &__title{
+    margin-bottom: 40px;
+  }
 }

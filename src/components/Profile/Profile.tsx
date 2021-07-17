@@ -1,10 +1,9 @@
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import './Profile.scss';
 
 function Profile(props: any) {
-
   return (
-    <MyPosts posts={props.state.posts}/>
+    <MyPostsContainer store={props.store} />
   );
 }
 
