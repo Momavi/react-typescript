@@ -1,6 +1,6 @@
-import avatar from './posts-avatar.png';
-import like from './like.svg';
-import share from './share.svg';
+import avatar from '../../../../assets/avatar.png';
+import like from '../../../../assets/like.svg';
+import share from '../../../../assets/share.svg';
 
 function Post(props: { message: string, likesCounter: number }) {
   return (
