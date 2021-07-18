@@ -19,13 +19,13 @@ function MyPosts(props: any) {
       <h3>My posts</h3>
       <div>
         <div>
-          <textarea
+          <textarea className="posts__input"
             onChange={onPostChange}
             ref={newPostElement}
             value={props.newPostText} />
         </div>
         <div>
-          <button onClick={() => { onAddPost() }}>Add post</button>
+          <button className="posts__button btn" onClick={() => { onAddPost() }}>Add post</button>
         </div>
       </div>
       <div className="posts">

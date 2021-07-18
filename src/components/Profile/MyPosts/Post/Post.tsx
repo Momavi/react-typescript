@@ -1,6 +1,5 @@
 import avatar from '../../../../assets/avatar.png';
 import like from '../../../../assets/like.svg';
-import share from '../../../../assets/share.svg';
 
 function Post(props: { message: string, likesCounter: number }) {
   return (
@@ -14,9 +13,7 @@ function Post(props: { message: string, likesCounter: number }) {
           <span className="posts__social-like-counter">{props.likesCounter}</span>
           <img className="posts__social-like-link" src={like} alt="like" />
         </a>
-        <a className="posts__social-share" href="#!">
-          <img className="posts__social-share-link" src={share} alt="share" />
-        </a>
+
       </div>
     </div>
   );

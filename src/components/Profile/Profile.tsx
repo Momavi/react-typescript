@@ -1,9 +1,14 @@
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import './Profile.scss';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 function Profile(props: any) {
   return (
-    <MyPostsContainer store={props.store} />
+    <div>
+      <ProfileInfo profile={props.profile} />
+      <MyPostsContainer />
+    </div>
+
   );
 }
 

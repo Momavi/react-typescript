@@ -1,6 +1,6 @@
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogContainer';
 import UsersContainer from './components/Users/UsersContainer';
 
@@ -14,11 +14,11 @@ function App(props: any) {
       <Header />
       <Navbar />
       <div className="content">
-        <Route exact path='/profile'
-          render={() => <Profile />} />
-        <Route exact path='/dialogs'
+        <Route path='/profile/:userId?'
+          render={() => <ProfileContainer />} />
+        <Route path='/dialogs'
           render={() => <DialogsContainer />} />
-        <Route exact path='/users'
+        <Route path='/users'
           render={() => <UsersContainer />} />
       </div>
     </div>

@@ -1,0 +1,15 @@
+.profile-info{
+  display: flex;
+  &__wrapper{
+
+  }
+  &__avatar{
+    &-img{
+      width: 300px;
+    }
+  }
+  &__contacts{
+    margin-top: 70px;
+    margin-left: 30px;
+  }
+}
