@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import LoginPage from './components/Login/Login';
 
 import { Route } from 'react-router-dom';
 
@@ -20,6 +21,8 @@ function App(props: any) {
           render={() => <DialogsContainer />} />
         <Route path='/users'
           render={() => <UsersContainer />} />
+        <Route path='/login'
+          render={() => <LoginPage />} />
       </div>
     </div>
   );

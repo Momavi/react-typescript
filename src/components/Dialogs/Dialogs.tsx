@@ -1,6 +1,7 @@
 import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { Redirect } from 'react-router-dom';
 
 import './Dialogs.scss';
 
@@ -17,6 +18,8 @@ function Dialogs(props: any) {
   let onNewMessageChange = (e: any) => {
     props.updateNewMessageBody(e.target.value);
   }
+
+  if (!props.isAuth) return <Redirect to={"/login"} />;
 
   return (
     <div className="dialogs">
