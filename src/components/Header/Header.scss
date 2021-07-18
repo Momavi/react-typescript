@@ -1,8 +1,17 @@
 .header {
+  width: 95%;
   grid-area: header;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
-  align-content: center;
   padding-left: 25px;
+  &__login{
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 5px 15px;
+    &-link{
+      text-decoration: none;
+      color: #fff
+    }
+  }
 }

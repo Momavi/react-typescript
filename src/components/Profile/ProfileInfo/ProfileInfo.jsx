@@ -19,7 +19,7 @@ function ProfileInfo(props) {
           </div>
 
         </div>
-        <div className="profile-info__contacts" onClick={console.log(props.profile)}>
+        <div className="profile-info__contacts">
           <div>{props.profile.contacts.facebook != null ? props.profile.contacts.facebook : 'facebook: нету'}</div>
           <div>{props.profile.contacts.website != null ? props.profile.contacts.website : 'website: нету'}</div>
           <div>{props.profile.contacts.vk != null ? props.profile.contacts.vk : 'vk: нету'}</div>
