@@ -6,7 +6,7 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
-const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS'
+const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 let initialtState = {
   users: [],
@@ -75,11 +75,11 @@ export const setTotalUsersCount = (totalUsersCount: number) => ({ type: SET_TOTA
 export const toggleIsFetching = (isFetching: boolean) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 export const toggleFollowingProgress = (isFetching: boolean, userId: number) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
 
-export const getUsers = (currentPage: number | undefined, pageSize: number | undefined) => {
+export const getUsers = (currentPage: any, pageSize: number | undefined) => {
   return (dispatch: any) => {
     dispatch(toggleIsFetching(true));
-
-    usersAPI.getUsers(currentPage, pageSize)
+    dispatch(setCurrentPage(currentPage));
+    usersAPI.getUserStatus(currentPage, pageSize)
       .then((data: any) => {
         dispatch(toggleIsFetching(false));
         dispatch(setUsers(data.items));

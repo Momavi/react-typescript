@@ -6,14 +6,14 @@ import Dialogs from './Dialogs';
 
 import './Dialogs.scss';
 
-let mapStateToProps = (state: any) => {
+let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
   }
 }
-let mapDispatchToProps = (dispatch: any) => {
+let mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMessageBody: (body: any) => {
+    updateNewMessageBody: (body) => {
       dispatch(updateNewMessageBodyCreator(body));
     },
     sendMessage: () => {
@@ -22,10 +22,7 @@ let mapDispatchToProps = (dispatch: any) => {
   }
 }
 
-// let AuthRedirectComponent = withAuthRedirect(Dialogs)
-// const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
-
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
-  withAuthRedirect
-) (Dialogs);
+  withAuthRedirect,
+)(Dialogs);

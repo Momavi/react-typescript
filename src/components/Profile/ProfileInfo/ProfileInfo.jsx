@@ -1,5 +1,6 @@
 import Preloader from '../../common/preloader/Preloader';
 import userPhoto from '../../../assets/avatar.png'
+import ProfileStatus from './ProfileStatus'
 
 import './ProfileInfo.scss'
 
@@ -11,13 +12,13 @@ function ProfileInfo(props) {
     <div>
       <div className="profile-info">
         <div className="profile-info__wrapper">
-        <div className="profile-info__description">
-            <h3 className="profile-info__fullname">{props.profile.fullName}</h3>
-          </div>
           <div className="profile-info__avatar">
             <img className="profile-info__avatar-img" src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="" />
           </div>
-
+          <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+        </div>
+        <div className="profile-info__description">
+          <h3 className="profile-info__fullname">{props.profile.fullName}</h3>
         </div>
         <div className="profile-info__contacts">
           <div>{props.profile.contacts.facebook != null ? props.profile.contacts.facebook : 'facebook: нету'}</div>

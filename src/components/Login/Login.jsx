@@ -1,9 +1,12 @@
-function Login(params) {
+import LoginForm from "./LoginForm/LoginForm";
+
+function Login(props) {
   return (
     <div>
-      <h1>YOU SHELL NOT PASS</h1>
+      <h2>LOGIN</h2>
+      <LoginForm />
     </div>
-  )  
+  )
 }
 
 export default Login;
