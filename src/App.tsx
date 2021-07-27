@@ -1,13 +1,11 @@
+import { Route } from 'react-router-dom';
+import './App.scss';
+import DialogsContainer from './components/Dialogs/DialogContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import LoginPage from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
-import DialogsContainer from './components/Dialogs/DialogContainer';
 import UsersContainer from './components/Users/UsersContainer';
-import LoginPage from './components/Login/Login';
-
-import { Route } from 'react-router-dom';
-
-import './App.scss';
 
 function App(props: any) {
   return (

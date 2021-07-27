@@ -1,11 +1,11 @@
 import { useFormik } from 'formik';
+import { loginAPI } from './../../api/api'
+import { setAuthUserData } from "./../../../redux/auth-reducer";
 import * as Yup from 'yup';
 
-import { LoginUser } from "../../../redux/auth-reducer";
-
 import './LoginForm.scss'
+function LoginForm(props) {
 
-const LoginForm = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -20,11 +20,23 @@ const LoginForm = () => {
     }),
 
     onSubmit: values => {
-      LoginUser(values);
+      debugger;
+      LoginUser(values.email, values.password, values.rememberMe)
       alert(JSON.stringify(values, null, 2));
     },
-
   });
+
+  const LoginUser = (values) => async (dispatch) => {
+    console.log(values)
+    let response = await loginAPI.LoginUser(values)
+
+    if (response.data.resultCode === 0) {
+      console.log(response.data.userId, values.email, values.login)
+      dispatch(setAuthUserData(response.data.userId, values.email, values.login));
+    }
+  }
+
+
   return (
     <form onSubmit={formik.handleSubmit} className="login-form">
       <label htmlFor="email">Email</label>

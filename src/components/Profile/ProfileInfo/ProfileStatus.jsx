@@ -1,53 +1,47 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import './ProfileInfo.scss'
 
-class ProfileStatus extends React.Component {
-  state = {
-    editMode: false,
-    status: this.props.status
+function ProfileStatus(props) {
+
+  const [editMode, setEditMode] = useState(false)
+  const [status, setStatus] = useState(props.status)
+
+  useEffect(() => {
+    setStatus(props.status)
+  }, [props.status])
+
+  const activateEditMode = () => {
+    setEditMode(true);
   }
 
-  activateEditMode = () => {
-    this.setState({
-      editMode: true
-    });
+  const deActivateEditMode = () => {
+    setEditMode(false);
+    props.updateStatus(status);
   }
 
-  deactivateEditMode = () => {
-    this.setState({
-      editMode: false
-    });
-    this.props.updateStatus(this.state.status);
+  const onStatusChange = (e) => {
+    setStatus(e.currentTarget.value);
   }
 
-  onStatusChange = (e) => {
-    this.setState({
-      status: e.currentTarget.value
-    });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.status !== this.props.status) {
-      this.setState({
-        status: this.props.status
-      })
-    }
-  }
-
-  render() {
-    return (
-      <>
-        {!this.state.editMode &&
-          <div onClick={this.activateEditMode}>
-            {this.props.status || '-----'}
-          </div>}
-        {this.state.editMode &&
-          <div>
-            <input onChange={this.onStatusChange} autoFocus onClick={this.deactivateEditMode} type="text" value={this.state.status} />
-          </div>}
-      </>
-    )
-  }
+  return (
+    <div>
+      {!editMode &&
+        <div
+          onClick={activateEditMode}>
+          {props.status || '-----'}
+        </div>
+      }
+      {editMode &&
+        <div>
+          <input
+            autoFocus
+            type="text"
+            onBlur={deActivateEditMode}
+            onChange={onStatusChange}
+            value={status} />
+        </div>}
+    </div>
+  )
 }
 
 export default ProfileStatus;
