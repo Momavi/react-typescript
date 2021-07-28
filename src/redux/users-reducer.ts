@@ -37,7 +37,7 @@ function usersReducer(state: any = initialtState, action: any) {
       return { ...state, currentPage: action.currentPage }
     }
     case SET_TOTAL_USERS_COUNT: {
-      return { ...state, totalUsersCount: 600 }
+      return { ...state, totalUsersCount: 2000 }
     }
     case TOGGLE_IS_FETCHING: {
       return { ...state, isFetching: action.isFetching }

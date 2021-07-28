@@ -1,9 +1,41 @@
-.dialogs{
-  &__wrapper{
+.dialogs {
+  &__wrapper {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 2fr 6fr;
   }
-  &__title{
+  &__title {
     margin-bottom: 40px;
   }
+  &__items {
+    border-right: 2px solid rgba(0, 0, 0, 0.61);
+    padding-right: 40px;
+  }
+  &__item {
+    border: 2px solid rgb(150, 150, 150);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    &-link {
+      text-decoration: none;
+      color: #fafafaf8;
+      transition: all 0.3s;
+      &:hover {
+        color: #029740;
+      }
+    }
+  }
+  &__messages {
+    padding-left: 25px;
+  }
+  &__message {
+    border: 1px solid rgba(0, 0, 0, 0.836);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.active {
+  background-color: #363057;
+  color: #17c25e;
 }

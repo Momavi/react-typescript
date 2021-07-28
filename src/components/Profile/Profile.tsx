@@ -1,8 +1,6 @@
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-import './Profile.scss';
-
 function Profile(props: any) {
   return (
     <div>

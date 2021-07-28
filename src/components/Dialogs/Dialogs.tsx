@@ -9,7 +9,7 @@ function Dialogs(props: any) {
   let state = props.dialogsPage;
 
   let dialogsElements = state.dialogs.map((d: { name: string, id: number }) => <DialogItem name={d.name} key={d.id} id={d.id} />);
-  let messagesElements = state.messages.map((m: { message: string, id : number }) => <Message text={m.message} key={m.id} />);
+  let messagesElements = state.messages.map((m: { message: string, id: number }) => <Message text={m.message} key={m.id} />);
   let newMessageElement: any = React.createRef();
 
   let onSendMessageClick = () => {
@@ -39,7 +39,7 @@ function Dialogs(props: any) {
                 placeholder="Enter you message" />
             </div>
             <div>
-              <button onClick={() => { onSendMessageClick() }}>Send</button>
+              <button className="btn" onClick={() => { onSendMessageClick() }}>Send</button>
             </div>
           </div>
         </div>

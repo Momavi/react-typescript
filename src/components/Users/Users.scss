@@ -18,7 +18,7 @@
     border: 2px solid rgb(15, 15, 15);
     border-radius: 20px;
   }
-  &__title{
+  &__title {
     margin: 10px 0;
     text-align: left;
   }
@@ -34,7 +34,6 @@
       width: 100%;
       margin-bottom: 5px;
     }
-
   }
   &__name {
     margin-left: 20px;
@@ -54,7 +53,6 @@
     &-country {
       margin-bottom: 10px;
     }
-
   }
   &__counter {
     display: flex;
@@ -64,46 +62,46 @@
     border: 2px solid #000;
     border-radius: 90px;
     padding: 0;
-    width: 40%;
-    &>li {
-      margin:0px 7.5px;
+    max-width: 50%;
+    & > li {
+      margin: 0px 7.5px;
       list-style: none;
       background: #fff;
       transition: all 0.3s;
       border: 1px transparent;
       border-radius: 6px;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background-color: #000;
         border: 1px #000;
         color: rgb(243, 243, 243);
       }
-      &:last-child{
+      &:last-child {
         margin-right: 0;
       }
     }
-    &>.active{
+    & > .active {
       background-color: #000;
       border: 1px #000;
       color: rgb(243, 243, 243);
     }
-    &>button{
+    & > button {
       background-color: #000;
       border: 2px solid transparent;
       border-radius: 45px;
       color: #fff;
       width: 13%;
-      height: 23px;
+      height: 24px;
       transition: all 0.4s;
-      &:hover{
+      &:hover {
         background-color: #fff;
         border: 2px solid #000;
         color: #000;
       }
-      &:first-child{
+      &:first-child {
         margin-right: 5px;
+        float: right;
       }
     }
   }
-
 }

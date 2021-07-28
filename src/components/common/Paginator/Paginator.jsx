@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import cn from "classnames";
+import { useState } from 'react';
 
 let Paginator = ({ totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10 }) => {
   let pagesCount = Math.ceil(totalItemsCount / pageSize);
-  console.log('currentPage = ' + currentPage)
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
