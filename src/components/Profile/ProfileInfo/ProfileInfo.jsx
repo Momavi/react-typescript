@@ -4,29 +4,40 @@ import ProfileStatus from './ProfileStatus'
 
 import './ProfileInfo.scss'
 
-function ProfileInfo(props) {
-  if (!props.profile) {
+function ProfileInfo({ profile, status, updateStatus, isOwner, savePhoto }) {
+  if (!profile) {
     return <Preloader />
   }
+
+  const onMainPhotoSelected = (e) => {
+    if (e.target.files.length) {
+      savePhoto(e.target.files[0]);
+    }
+  }
+
   return (
     <div>
       <div className="profile-info">
         <div className="profile-info__wrapper">
-          <div className="profile-info__avatar">
-            <img className="profile-info__avatar-img" src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} alt="" />
+          <div className="profile-info__inner">
+            <div className="profile-info__avatar">
+              <img className="profile-info__avatar-img" src={profile.photos.large || userPhoto} alt="" />
+            </div>
+            {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+            <div className="profile-info__description">
+              <h3 className="profile-info__fullname">{profile.fullName}</h3>
+            </div>
+            <ProfileStatus status={status} updateStatus={updateStatus} />
           </div>
-          <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
         </div>
-        <div className="profile-info__description">
-          <h3 className="profile-info__fullname">{props.profile.fullName}</h3>
-        </div>
+
         <div className="profile-info__contacts">
-          <div>{props.profile.contacts.facebook != null ? props.profile.contacts.facebook : 'facebook: нету'}</div>
-          <div>{props.profile.contacts.website != null ? props.profile.contacts.website : 'website: нету'}</div>
-          <div>{props.profile.contacts.vk != null ? props.profile.contacts.vk : 'vk: нету'}</div>
-          <div>{props.profile.contacts.twitter != null ? props.profile.contacts.twitter : 'twitter: нету'}</div>
-          <div>{props.profile.contacts.instagram != null ? props.profile.contacts.instagram : 'instagram: нету'}</div>
-          <div>{props.profile.contacts.github != null ? props.profile.contacts.github : 'github: нету'}</div>
+          <div>{profile.contacts.facebook || 'facebook: нету'}</div>
+          <div>{profile.contacts.website || 'website: нету'}</div>
+          <div>{profile.contacts.vk || 'vk: нету'}</div>
+          <div>{profile.contacts.twitter || 'twitter: нету'}</div>
+          <div>{profile.contacts.instagram || 'instagram: нету'}</div>
+          <div>{profile.contacts.github || 'github: нету'}</div>
         </div>
       </div>
     </div>

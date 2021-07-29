@@ -1,20 +1,23 @@
-.profile-info{
+.profile-info {
   display: flex;
-  // &__wrapper{
-
-  // }
-  &__avatar{
-    &-img{
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+  &__avatar {
+    &-img {
       width: 300px;
     }
   }
-  &__contacts{
-    margin-left: 30px;
+  &__contacts {
+    margin-right: 60px;
   }
-  &__description{
-    margin: 0px 10px 20px 40px;
+  &__description {
+    margin: 0px 10px 20px 0px;
   }
-  &__fullname{
-    margin: 0;
+  &__fullname {
+    margin: 30px 0 0 0;
+  }
+  &__status {
+    margin: 30px 0 40px 0px;
   }
 }

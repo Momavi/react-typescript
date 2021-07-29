@@ -24,22 +24,24 @@ function ProfileStatus(props) {
   }
 
   return (
-    <div>
-      {!editMode &&
-        <div
-          onClick={activateEditMode}>
-          {props.status || '-----'}
-        </div>
-      }
-      {editMode &&
-        <div>
-          <input
-            autoFocus
-            type="text"
-            onBlur={deActivateEditMode}
-            onChange={onStatusChange}
-            value={status} />
-        </div>}
+    <div className="profile-info__status">
+      <span>Статус:
+        {!editMode &&
+          <div
+            onClick={activateEditMode}>
+            {props.status || '-----'}
+          </div>
+        }
+        {editMode &&
+          <div>
+            <input
+              autoFocus
+              type="text"
+              onBlur={deActivateEditMode}
+              onChange={onStatusChange}
+              value={status} />
+          </div>}
+      </span>
     </div>
   )
 }

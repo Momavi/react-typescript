@@ -1,25 +1,31 @@
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withRouter } from "react-router-dom";
 import Login from './Login';
+import React from 'react';
+import { connect } from 'react-redux';
+import { LoginUser } from '../../redux/auth-reducer'
+import { withRouter } from "react-router-dom";
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
-let mapStateToProps = (state) => {
-  return {
-    dialogsPage: state.dialogsPage,
+
+class LoginContainer extends React.Component {
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <Login
+        {...this.props}
+        LoginUser={this.props.LoginUser} />
+    )
   }
 }
-let mapDispatchToProps = (dispatch) => {
-  return {
-    updateNewMessageBody: (body) => {
-      dispatch(updateNewMessageBodyCreator(body));
-    },
-    sendMessage: () => {
-      dispatch(sendMessageCreator());
-    }
-  }
-}
+
+let mapStateToProps = (state) => ({
+
+});
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps ),
+  connect(mapStateToProps, { LoginUser }),
   withRouter,
-)(Login);
+  withAuthRedirect,
+)(LoginContainer);

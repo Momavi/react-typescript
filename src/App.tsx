@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogContainer'));
 const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
-const LoginPage = React.lazy(() => import('./components/Login/Login'));
+const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer'));
 
 
 function App(props: any) {
@@ -25,7 +25,7 @@ function App(props: any) {
           <Route path='/users'
             render={() => <UsersContainer />} />
           <Route path='/login'
-            render={() => <LoginPage />} />
+            render={() => <LoginContainer />} />
         </div>
       </Suspense>
     </div>

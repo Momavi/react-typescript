@@ -3,7 +3,7 @@ import './MyPosts.scss';
 import Post from './Post/Post';
 
 const MyPosts = React.memo((props: any) => {
-  let postsElements = props.posts.map((p: { message: string, likesCounter: number }) => <Post message={p.message} likesCounter={p.likesCounter} />);
+  let postsElements = props.posts.map((p: { message: string, likesCounter: number, id: number }) => <Post key={p.id} message={p.message} likesCounter={p.likesCounter} />);
   let newPostElement: any = React.createRef();
 
   let onAddPost = () => {
