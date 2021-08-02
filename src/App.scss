@@ -14,8 +14,17 @@ body {
   grid-template-columns: 2fr 14fr;
   height: 100vh;
   background-color: rgb(54, 48, 87);
+  transition: all 0.3s;
 }
-
+@media (max-width: 920px) {
+  .App {
+    grid-template-areas:
+      "header header"
+      "content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 100fr;  
+  }
+}
 ::-webkit-scrollbar {
   width: 0;
 }

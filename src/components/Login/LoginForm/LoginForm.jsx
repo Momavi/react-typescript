@@ -19,9 +19,8 @@ function LoginForm(props) {
     }),
 
     onSubmit: values => {
-      debugger;
       props.LoginUser(values.email, values.password, values.rememberMe)
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 

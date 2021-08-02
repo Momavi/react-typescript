@@ -25,9 +25,10 @@ function ProfileStatus(props) {
 
   return (
     <div className="profile-info__status">
-      <span>Статус:
+      <span className="profile-info__status-span">Статус:
         {!editMode &&
           <div
+            className="profile-info__status-text"
             onClick={activateEditMode}>
             {props.status || '-----'}
           </div>
@@ -35,6 +36,7 @@ function ProfileStatus(props) {
         {editMode &&
           <div>
             <input
+              className="profile-info__status-input"
               autoFocus
               type="text"
               onBlur={deActivateEditMode}

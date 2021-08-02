@@ -4,7 +4,7 @@ import './Navbar.scss';
 
 function Navbar() {
   return (
-    <nav className="nav">
+    <nav className="nav" id="nav">
       <ul className="nav__item">
         <li className="nav__item-li">
           <NavLink className="nav__item-li-link" to="/profile">Profile</NavLink>
@@ -21,7 +21,6 @@ function Navbar() {
         <li className="nav__item-li">
           <NavLink className="nav__item-li-link" to="/settings">Settings</NavLink>
         </li>
-
       </ul>
     </nav>
   );

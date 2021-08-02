@@ -4,16 +4,21 @@ import './Header.scss';
 
 function Header(props) {
   return (
-    <header className="header" onClick={ () => console.log(props)}>
+    <header className="header">
       <Logo />
-      <div className="header__login" >
-        {
-          props.isAuth ? props.login
-          : <NavLink className="header__login-link" to={'/login'}>Login</NavLink>
-        }
+      <div className="header__inner">
+        <div className="header__login" >
 
+          {
+            props.isAuth ? props.login
+              : <NavLink className="header__login-link" to={'/login'}>Login</NavLink>
+          }
+
+        </div>
       </div>
+
     </header>
+
   );
 }
 

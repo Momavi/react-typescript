@@ -55,6 +55,7 @@ export const authAPI = {
 
 export const loginAPI = {
   LoginUser(email, password, rememberMe) {
+    console.log(instance.post(`auth/login`, { email, password, rememberMe }))
     return instance.post(`auth/login`, { email, password, rememberMe })
   }
 }
