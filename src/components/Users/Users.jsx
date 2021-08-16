@@ -1,5 +1,5 @@
 import './Users.scss'
-import Paginator from '../common/Paginator/Paginator';
+import Paginator from './../common/Paginator/Paginator'
 import User from './User'
 
 let Users = ({ currentPage, onPageChanged, totalUsersCount, pageSize, users, ...props }) => {

@@ -1,4 +1,4 @@
-import { authAPI, loginAPI } from "../components/api/api";
+import { authAPI, loginAPI } from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
@@ -39,7 +39,6 @@ export const getAuthUserData = () => async (dispatch) => {
 
 export const LoginUser = (email, password, rememberMe) => async (dispatch) => {
   let response = await loginAPI.LoginUser(email, password, rememberMe)
-  console.log(response)
   if (response.data.resultCode === 0) {
     dispatch(getAuthUserData());
   }

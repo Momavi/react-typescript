@@ -1,4 +1,4 @@
-import { usersAPI } from "../components/api/api";
+import { usersAPI } from "../api/api";
 import { updateObjectInArray } from "../utilitis/object-helper";
 
 const FOLLOW = 'FOLLOW';
@@ -23,12 +23,12 @@ function usersReducer(state: any = initialtState, action: any) {
     case FOLLOW:
       return {
         ...state,
-        users: updateObjectInArray(state.users, action.userId, 'id', {followed: true})
+        users: updateObjectInArray(state.users, action.userId, 'id', { followed: true })
       }
     case UNFOLLOW:
       return {
         ...state,
-        users: updateObjectInArray(state.users, action.userId, 'id', {followed: false})
+        users: updateObjectInArray(state.users, action.userId, 'id', { followed: false })
       }
     case SET_USERS: {
       return { ...state, users: action.users }

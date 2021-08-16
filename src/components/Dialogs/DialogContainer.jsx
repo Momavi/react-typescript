@@ -4,8 +4,6 @@ import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
 
-import './Dialogs.scss';
-
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
