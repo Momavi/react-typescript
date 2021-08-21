@@ -22,7 +22,7 @@ body {
       "header header"
       "content";
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 100fr;  
+    grid-template-columns: 100fr;
   }
 }
 ::-webkit-scrollbar {
@@ -52,4 +52,8 @@ body {
   border-top-left-radius: 45px;
   padding: 35px;
   box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+}
+
+.preloader {
+  margin: 0 auto;
 }
