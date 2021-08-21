@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 import './LoginForm.scss'
 
-function LoginForm(props) {
+function LoginForm(props: any) {
 
   const formik = useFormik({
     initialValues: {

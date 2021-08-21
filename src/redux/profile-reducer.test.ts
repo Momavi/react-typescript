@@ -11,7 +11,7 @@ let state = {
 
 it('length of posts should be incremented', () => {
   // 1. test data
-  let action = addPostActionCreator('new text (test)');
+  let action = addPostActionCreator();
 
   // 2. action
   let newState = profileReducer(state, action);

@@ -1,6 +1,6 @@
 import LoginForm from "./LoginForm/LoginForm";
 
-function Login(props) {
+function Login(props: any) {
   return (
     <div>
       <h2>LOGIN</h2>

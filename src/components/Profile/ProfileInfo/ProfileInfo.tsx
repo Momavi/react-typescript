@@ -4,12 +4,12 @@ import ProfileStatus from './ProfileStatus'
 
 import './ProfileInfo.scss'
 
-function ProfileInfo({ profile, status, updateStatus, isOwner, savePhoto }) {
+function ProfileInfo({ profile, status, updateStatus, isOwner, savePhoto }: any) {
   if (!profile) {
     return <Preloader />
   }
 
-  const onMainPhotoSelected = (e) => {
+  const onMainPhotoSelected = (e: any) => {
     if (e.target.files.length) {
       savePhoto(e.target.files[0]);
     }

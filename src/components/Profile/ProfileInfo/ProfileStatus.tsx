@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ProfileInfo.scss'
 
-function ProfileStatus(props) {
+function ProfileStatus(props: any) {
 
   const [editMode, setEditMode] = useState(false)
   const [status, setStatus] = useState(props.status)
@@ -19,7 +19,7 @@ function ProfileStatus(props) {
     props.updateStatus(status);
   }
 
-  const onStatusChange = (e) => {
+  const onStatusChange = (e: any) => {
     setStatus(e.currentTarget.value);
   }
 

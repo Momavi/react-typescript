@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import UserPhoto from './../../assets/avatar.png'
 
-let User = ({user, followingInProgess, unfollow, follow }) => {
+let User = ({ user, followingInProgess, unfollow, follow }: any) => {
   return (
     <div key={user.id}>
       <div className="users__wrapper">
@@ -15,12 +15,12 @@ let User = ({user, followingInProgess, unfollow, follow }) => {
             <div>
               {user.followed
                 ?
-                <button disabled={followingInProgess.some(id => id === user.id)} className="users__avatar-button btn"
+                <button disabled={followingInProgess.some((id: number) => id === user.id)} className="users__avatar-button btn"
                   onClick={() => {
                     unfollow(user.id)
                   }}>Unfollow</button>
                 :
-                <button disabled={followingInProgess.some(id => id === user.id)} className="users__avatar-button btn"
+                <button disabled={followingInProgess.some((id: number) => id === user.id)} className="users__avatar-button btn"
                   onClick={() => {
                     follow(user.id)
                   }}>Follow</button>}
