@@ -40,6 +40,7 @@ class UsersContainer extends React.Component {
           users={this.props.users}
           follow={this.props.follow}
           unfollow={this.props.unfollow}
+          isFetching={this.props.isFetching}
           followingInProgess={this.props.followingInProgess}
         />
       </>
